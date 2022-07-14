@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>HTML basics</header>
+        <ul>
+            <li><a href="#What_is_HTML?" class="nav-link">What is HTML?</a></li>
+            <li><a href="#Anatomy_of_an_HTML_element" class="nav-link">Anatomy of an HTML element</a></li>
+            <li><a href="#Nesting_elements" class="nav-link">Nesting elements</a></li>
+            <li><a href="#Block_versus_inline_elements" class="nav-link">Block versus inline elements</a></li>
+            <li><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="What_is_HTML?">
+            <header>What is HTML?</header>
+            <p>
+                HTML is a markup language that defines the structure of your content. HTML consists of a series of
+                elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain
+                way, or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can
+                italicize words, can make the font bigger or smaller, and so on. For example, take the following line of
+                content:
+            </p>
+            <code>
+                My cat is very grumpy
+            </code>
+            <p>
+                If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in
+                paragraph tags:
+            </p>
+            <code>
+                &lt;p&gt;My cat is very grumpy&lt;/p&gt;
+            </code>
+        </section>
+
+        <section class="main-section" id="Anatomy_of_an_HTML_element">
+            <header>Anatomy of an HTML element</header>
+            <p>Let's further explore our paragraph element from the previous section:</p>
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png"
+                alt="">
+            <p>The anatomy of our element is:</p>
+            <ul>
+                <li><strong>The opening tag:</strong> This consists of the name of the element (in this example, p for
+                    paragraph), wrapped in opening and closing angle brackets. This opening tag marks where the element
+                    begins or starts to take effect. In this example, it precedes the start of the paragraph text.</li>
+                <li><strong>The content:</strong> This is the content of the element. In this example, it is the
+                    paragraph text.</li>
+                <li><strong>The closing tag:</strong> This is the same as the opening tag, except that it includes a
+                    forward slash before the element name. This marks where the element ends. Failing to include a
+                    closing tag is a common beginner error that can produce peculiar results.</li>
+            </ul>
+            <p>The element is the opening tag, followed by content, followed by the closing tag.</p>
+        </section>
+
+        <section class="main-section" id="Nesting_elements">
+            <header>Nesting elements</header>
+            <p>
+                Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat
+                is <strong>very</strong> grumpy, we could wrap the word very in a <i>strong</i> element, which means that the word is to have strong(er) text formatting:
+            </p>
+            <code>
+                &lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;
+            </code>
+            <p>
+                There is a right and wrong way to do nesting. In the example above, we opened the <i>p</i> element first, then
+                opened the <i>strong</i> element. For proper nesting, we should close the <i>strong</i> element first, before closing
+                the <i>p</i>.
+            </p>
+            <p>
+                The following is an example of the wrong way to do nesting:
+            </p>
+            <code>
+                &lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;
+            </code>
+            <p>
+                The <strong>tags have to open and close in a way that they are inside or outside one another</strong>.
+                With the kind of overlap in the example above, the browser has to guess at your intent. This kind of
+                guessing can result in unexpected results.
+            </p>
+        </section>
+
+        <section class="main-section" id="Block_versus_inline_elements">
+            <header>Block versus inline elements</header>
+            <p>
+                There are two important categories of elements to know in HTML: block-level elements and inline elements.
+            </p>
+            <ul>
+                <li>
+                    Block-level elements form a visible block on a page. A block-level element appears on a new line following the content that precedes it. Any content that follows a block-level element also appears on a new line. Block-level elements are usually structural elements on the page. For example, a block-level element might represent headings, paragraphs, lists, navigation menus, or footers. A block-level element wouldn't be nested inside an inline element, but it might be nested inside another block-level element.
+                </li>
+                <li>
+                    Inline elements are contained within block-level elements, and surround only small parts of the document's content (not entire paragraphs or groupings of content). An inline element will not cause a new line to appear in the document. It is typically used with text, for example an <i>a</i> element creates a hyperlink, and elements such as <i>em</i> or <i>strong</i> create emphasis.
+                </li>
+            </ul>
+            <p>
+                Consider the following example:
+            </p>
+            <code>
+                &lt;em&gt;first&lt;/em&gt;&lt;em&gt;second&lt;/em&gt;&lt;em&gt;third&lt;/em&gt; <br>
+                &lt;p&gt;fourth&lt;/p&gt;&lt;p&gt;fifth&lt;/p&gt;&lt;p&gt;sixth&lt;/p&gt;
+            </code>
+            <p>
+                <i>em</i> is an inline element. As you see below, the first three elements sit on the same line, with no space in between. On the other hand, <i>p</i> is a block-level element. Each p element appears on a new line, with space above and below. (The spacing is due to default CSS styling that the browser applies to paragraphs.)
+            </p>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">MDN</a>.</p>
+        </section>
+    </main>
+
+</body>
+
+</html>
